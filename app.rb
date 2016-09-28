@@ -2,5 +2,11 @@ require 'bundler'
 Bundler.require
 
 get '/' do
-  erb :nginx
+  erb random_template
+end
+
+private
+
+def random_template
+  [:nginx, :apache].sample
 end
