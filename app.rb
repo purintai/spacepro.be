@@ -8,5 +8,5 @@ end
 private
 
 def random_template
-  [:nginx, :apache, :rails, :iis7].sample
+  [:nginx, :apache, :rails, :iis7, :h2o].sample
 end
