@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
+    multi_xml (0.5.5)
     mustermann (1.0.0.beta2)
     rack (2.0.1)
     rack-protection (2.0.0.beta2)
@@ -16,6 +19,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  httparty
   sinatra (= 2.0.0.beta2)
 
 RUBY VERSION
