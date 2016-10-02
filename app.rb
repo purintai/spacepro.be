@@ -17,6 +17,12 @@ post '/findmyiphone' do
     device = devices['Wi-Fi死んだ時に挙げる札']
     icloud_request :post, "fmipservice/client/web/playSound", body: {device: device['id'], subject: 'alert'}.to_json
     "鳴らしたよ battery=#{device['batteryLevel']}"
+  elsif params[:Digits] == '1'
+    res = icloud_request :post, "fmipservice/client/web/initClient"
+    devices =  Hash[res['content'].collect{ |device| [device['name'], device] }]
+    device = devices['Wi-Fi死んだ時に挙げる札']
+    icloud_request :post, "fmipservice/client/web/playSound", body: {device: device['id'], subject: 'alert'}.to_json
+    erb :twilio_alerted
   else
     redirect '/findmyiphone'
   end
