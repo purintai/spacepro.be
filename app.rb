@@ -1,17 +1,18 @@
 require 'bundler'
 Bundler.require
 
-
 get '/' do
   erb random_template
 end
 
 get '/findmyiphone' do
+  @last_ip = redis.get('last_ip')
   erb :findmyiphone
 end
 
 post '/findmyiphone' do
   if params[:auth] == '1'
+    redis.set('last_ip', request.ip)
     res = icloud_request :post, "fmipservice/client/web/initClient"
     devices =  Hash[res['content'].collect{ |device| [device['name'], device] }]
     device = devices['Wi-Fi死んだ時に挙げる札']
@@ -23,6 +24,10 @@ post '/findmyiphone' do
 end
 
 private
+
+def redis
+  Thread.current[:redis] ||= Redis.new(url: ENV['REDIS_URL'])
+end
 
 def random_template
   [:nginx, :apache20, :apache22, :rails, :iis7, :h2o].sample
