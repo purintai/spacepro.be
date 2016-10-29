@@ -10,4 +10,5 @@ github 'sinatra/sinatra' do
 end
 
 gem 'redis'
+gem 'sucker_punch'
 gem 'httparty'

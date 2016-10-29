@@ -22,6 +22,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.6.8)
+    concurrent-ruby (1.0.2)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     multi_json (1.12.1)
@@ -32,6 +33,8 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     redis (3.3.1)
+    sucker_punch (2.0.2)
+      concurrent-ruby (~> 1.0.0)
     tilt (2.0.5)
 
 PLATFORMS
@@ -43,6 +46,7 @@ DEPENDENCIES
   redis
   sinatra!
   sinatra-contrib!
+  sucker_punch
 
 RUBY VERSION
    ruby 2.3.1p112
