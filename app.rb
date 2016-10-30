@@ -5,7 +5,6 @@ class App < Sinatra::Base
 
   configure do
     set :sessions, true
-    set :inline_templates, true
   end
 
   use OmniAuth::Builder do
@@ -42,6 +41,11 @@ class App < Sinatra::Base
 
   get '/' do
     erb random_template
+  end
+
+  get '/logout' do
+    session.clear
+    '(^o^)/~~'
   end
 
   get '/findmyiphone' do
