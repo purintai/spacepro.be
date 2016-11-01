@@ -5,6 +5,7 @@ class App < Sinatra::Base
 
   configure do
     set :sessions, true
+    set :session_secret, ENV['SECRET_KEY_BASE']
   end
 
   use OmniAuth::Builder do
@@ -37,6 +38,10 @@ class App < Sinatra::Base
     redis.hset('twitter', "#{result['uid']}:screen_name", result['info']['nickname'])
     session[:twitter_uid] = result['uid']
     redirect session.delete(:callback_redirect_path) || '/'
+  end
+
+  get '/auth/failure' do
+    'Twitter認証失敗'
   end
 
   get '/' do
