@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/sinatra/sinatra.git
-  revision: af6dad2a6c31e31617712b15f455b2a3d3eb1c06
+  revision: 63e81bc539b36778c6bd50a303750ab52ee2b2fb
   specs:
     rack-protection (2.0.0.beta2)
       rack
@@ -40,7 +40,7 @@ GEM
     omniauth-twitter (1.2.1)
       json (~> 1.3)
       omniauth-oauth (~> 1.1)
-    puma (3.6.0)
+    puma (3.6.1)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -63,7 +63,7 @@ DEPENDENCIES
   sucker_punch
 
 RUBY VERSION
-   ruby 2.3.2p217
+   ruby 2.3.3p222
 
 BUNDLED WITH
    1.13.6
