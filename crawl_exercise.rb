@@ -17,4 +17,9 @@ class CrawlExercise < App
       end
     end
   end
+
+  # https://github.com/hitode909/great-redirect-loop
+  get '/redirect_loop' do
+    redirect request.path
+  end
 end
