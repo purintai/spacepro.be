@@ -6,7 +6,7 @@ html
     meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"
   body
     | 認証状態:
-    = current_user ? "@#{current_username}さん <a href='/logout'>ログアウト</a>" : '※Twitter認証が必要です'
+    == current_user ? "@#{current_username}さん <a href='/logout'>ログアウト</a>" : '※Twitter認証が必要です'
     form action="/findmyiphone" method="POST"
       | 本人認証:
       input type="checkbox" name="auth" value="1" 私はぷりんたいです
@@ -20,4 +20,5 @@ html
       - @histories.each do |history|
         tr
           td = history['when']
-          td = history['who']
+          td == history['who']
+
