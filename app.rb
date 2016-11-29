@@ -55,7 +55,7 @@ class App < Sinatra::Base
 
   get '/findmyiphone' do
     @histories = redis.lrange('histories', 0, 19).map{|history| JSON.load(history)}
-    erb :findmyiphone
+    slim :findmyiphone
   end
 
   post '/findmyiphone' do

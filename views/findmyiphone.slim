@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title iPhoneなくした時用のページ
+    meta charset="UTF-8"
+    meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"
+  body
+    | 認証状態:
+    = current_user ? "@#{current_username}さん <a href='/logout'>ログアウト</a>" : '※Twitter認証が必要です'
+    form action="/findmyiphone" method="POST"
+      | 本人認証:
+      input type="checkbox" name="auth" value="1" 私はぷりんたいです
+      input type="submit" value="iPhoneから音を鳴らす"
+
+    | 利用履歴
+    table border=1
+      tr
+        th いつ
+        th だれ
+      - @histories.each do |history|
+        tr
+          td = history['when']
+          td = history['who']
