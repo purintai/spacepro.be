@@ -1,6 +1,6 @@
 class CrawlExercise < App
   get '/' do
-    'welcome!'
+    slim :'crawl/index'
   end
 
   # http://www.town.higashikagura.lg.jp/live/live.php
@@ -20,6 +20,10 @@ class CrawlExercise < App
 
   # https://github.com/hitode909/great-redirect-loop
   get '/redirect_loop' do
-    redirect request.path
+    redirect '/crawl/redirect_loop'
+  end
+
+  get '/redirect_loop/:number' do
+    redirect "/crawl/redirect_loop/#{params[:number].to_i + 1}"
   end
 end

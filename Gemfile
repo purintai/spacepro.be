@@ -9,6 +9,7 @@ github 'sinatra/sinatra' do
   gem 'sinatra-contrib'
 end
 
+gem 'slim'
 gem 'redis'
 gem 'sucker_punch'
 gem 'omniauth'
