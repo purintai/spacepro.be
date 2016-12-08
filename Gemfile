@@ -14,4 +14,6 @@ gem 'redis'
 gem 'sucker_punch'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'bugsnag'
+
 gem 'httparty'

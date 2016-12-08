@@ -8,6 +8,12 @@ class App < Sinatra::Base
     set :session_secret, ENV['SECRET_KEY_BASE']
   end
 
+  Bugsnag.configure do |config|
+    config.api_key = ENV['BUGSNAG_API_KEY']
+  end
+  use Bugsnag::Rack
+  enable :raise_errors
+
   use OmniAuth::Builder do
     provider :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
   end
