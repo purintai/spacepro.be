@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/sinatra/sinatra.git
-  revision: bf2f65a348274c0d819f206f07377d1440910e61
+  revision: 004daf4922af6ee7a7a87982f3040768e428209e
   specs:
     rack-protection (2.0.0.beta2)
       rack
@@ -30,7 +30,7 @@ GEM
   specs:
     backports (3.6.8)
     bugsnag (5.0.1)
-    concurrent-ruby (1.0.3)
+    concurrent-ruby (1.0.4)
     hashie (3.4.6)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
