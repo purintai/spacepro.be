@@ -1,8 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.4.0'
-
-gem 'json', git: 'https://github.com/flori/json', branch: 'v1.8'
+ruby '2.4.1'
 
 gem 'puma'
 
@@ -19,4 +17,3 @@ gem 'omniauth-twitter'
 gem 'bugsnag'
 
 gem 'httparty'
-
