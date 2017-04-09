@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
-ruby '2.4.1'
+if v = ENV['CUSTOM_RUBY_VERSION']
+  ruby v
+end
 
 gem 'puma'
 
@@ -17,3 +19,4 @@ gem 'omniauth-twitter'
 gem 'bugsnag'
 
 gem 'httparty'
+
