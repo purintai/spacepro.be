@@ -79,6 +79,14 @@ class App < Sinatra::Base
     end
   end
 
+  get '/vuln/opener' do
+    slim :opener
+  end
+
+  get '/vuln/opener2' do
+    slim :opener2
+  end
+
   private
 
   def random_template
