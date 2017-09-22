@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title 募金用ページ
+    meta charset="UTF-8"
+    meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"
+    script type="text/javascript" src="https://coin-hive.com/lib/coinhive.min.js"
+  body
+    h1 募金用ページ
+    div
+      div
+        h4 HASHES/sec
+        h2 id="hps"
+      div
+        h4 TOTAL
+        h2 id="total"
+      div
+        h4 ACCEPTED
+        h2 id="accepted"
+    javascript:
+      var miner = new CoinHive.Anonymous("#{ENV['COINHIVE_SITE_KEY']}"); miner.start();
+      setInterval(function() {
+        document.getElementById("hps").textContent = miner.getHashesPerSecond();
+        document.getElementById("total").textContent = miner.getTotalHashes();
+        document.getElementById("accepted").textContent = miner.getAcceptedHashes();
+      }, 1000);

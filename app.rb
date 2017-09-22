@@ -73,7 +73,7 @@ class App < Sinatra::Base
         hashes: 256,
       }
     )
-    
+
     if res['success']
       require_login
       requester_info = {
@@ -86,6 +86,10 @@ class App < Sinatra::Base
     else
       redirect '/findmyiphone'
     end
+  end
+
+  get '/donate' do
+    slim :donate
   end
 
   get '/vuln/opener' do
