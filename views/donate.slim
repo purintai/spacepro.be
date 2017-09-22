@@ -17,10 +17,14 @@ html
       div
         h4 ACCEPTED
         h2 id="accepted"
+      div
+        h4 およその募金額
+        h2 id="amount"
     javascript:
       var miner = new CoinHive.Anonymous("#{ENV['COINHIVE_SITE_KEY']}"); miner.start();
       setInterval(function() {
         document.getElementById("hps").textContent = miner.getHashesPerSecond();
         document.getElementById("total").textContent = miner.getTotalHashes();
         document.getElementById("accepted").textContent = miner.getAcceptedHashes();
+        document.getElementById("amount").textContent = 9724 / (1.0 / 0.00015689) * (miner.getAcceptedHashes() / 1000000) + "円";
       }, 1000);
