@@ -6,10 +6,8 @@ end
 
 gem 'puma'
 
-github 'sinatra/sinatra' do
-  gem 'sinatra'
-  gem 'sinatra-contrib'
-end
+gem 'sinatra'
+gem 'sinatra-contrib'
 
 gem 'slim'
 gem 'redis'
