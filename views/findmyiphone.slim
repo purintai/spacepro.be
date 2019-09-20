@@ -4,13 +4,12 @@ html
     title iPhoneなくした時用のページ
     meta charset="UTF-8"
     meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"
-    script type="text/javascript" src="https://coin-hive.com/lib/captcha.min.js"
   body
     | 認証状態:
     == current_user ? "@#{current_username}さん <a href='/logout'>ログアウト</a>" : '※Twitter認証が必要です'
     form action="/findmyiphone" method="POST"
       | 本人認証:
-      div class="coinhive-captcha" data-hashes="256" data-key="#{ENV['COINHIVE_SITE_KEY']}" data-disable-elements="input[type=submit]"
+      input type="checkbox" name="auth" value="1" 私はぷりんたいです
       input type="submit" value="iPhoneから音を鳴らす"
 
     | 利用履歴
@@ -22,3 +21,4 @@ html
         tr
           td = history['when']
           td == history['who']
+

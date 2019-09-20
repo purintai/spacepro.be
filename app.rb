@@ -59,16 +59,7 @@ class App < Sinatra::Base
   end
 
   post '/findmyiphone' do
-    res = HTTParty.post(
-      'https://api.coin-hive.com/token/verify',
-      body: {
-        secret: ENV['COINHIVE_SECRET_KEY'],
-        token: params['coinhive-captcha-token'],
-        hashes: 256,
-      }
-    )
-
-    if res['success']
+    if params[:auth] == '1'
       require_login
       requester_info = {
         when: Time.now.iso8601,
